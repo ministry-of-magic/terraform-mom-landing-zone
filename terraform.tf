@@ -6,11 +6,11 @@ terraform {
     }
     azurerm = {
       source  = "hashicorp/azurerm"
-      version = "=3.0.0"
+      version = "~> 3.21"
     }
     github = {
       source  = "hashicorp/github"
-      version = "~> 4.0"
+      version = "~> 4.31"
     }
     tfe = {
       version = "~> 0.33"
