@@ -25,6 +25,5 @@ destroy: init
 
 .PHONY: clean
 clean:
-	@rm provider_override.tf
 	@rm -rf .terraform
 	@rm *.tfstate
