@@ -1,0 +1,23 @@
+provider "azuread" {
+  client_id     = "op://Ministry of Magic/Azure Service Principal/username"
+  client_secret = "op://Ministry of Magic/Azure Service Principal/credential"
+  tenant_id     = "op://Ministry of Magic/Azure Service Principal/tenant"
+}
+
+provider "azurerm" {
+  client_id       = "op://Ministry of Magic/Azure Service Principal/username"
+  client_secret   = "op://Ministry of Magic/Azure Service Principal/credential"
+  tenant_id       = "op://Ministry of Magic/Azure Service Principal/tenant"
+  subscription_id = "op://Ministry of Magic/Azure Subscription/subscription"
+
+  features {}
+}
+
+provider "github" {
+  owner = "op://Ministry of Magic/GitHub/username"
+  token = "op://Ministry of Magic/GitHub/credential"
+}
+
+provider "tfe" {
+  token = "op://Ministry of Magic/Terraform Cloud/credential"
+}
