@@ -89,39 +89,6 @@ resource "github_repository_file" "terraform" {
   overwrite_on_create = true
 }
 
-//NOTE: The below implementation is for non-GHE instances
-resource "github_actions_secret" "azure_tenant_id" {
-  for_each = var.azure_landing_zone_service_principal
-
-  repository      = github_repository.this.name
-  secret_name     = format("ARM_TENANT_ID_%s", upper(each.key))
-  plaintext_value = each.value.tenant_id
-}
-
-resource "github_actions_secret" "azure_subscription_id" {
-  for_each = var.azure_landing_zone_service_principal
-
-  repository      = github_repository.this.name
-  secret_name     = format("ARM_SUBSCRIPTION_ID_%s", upper(each.key))
-  plaintext_value = each.value.subscription_id
-}
-
-resource "github_actions_secret" "azure_landing_zone_service_principal_id" {
-  for_each = var.azure_landing_zone_service_principal
-
-  repository      = github_repository.this.name
-  secret_name     = format("ARM_CLIENT_ID_%s", upper(each.key))
-  plaintext_value = each.value.client_id
-}
-
-resource "github_actions_secret" "azure_landing_zone_service_principal_secret" {
-  for_each = var.azure_landing_zone_service_principal
-
-  repository      = github_repository.this.name
-  secret_name     = format("ARM_CLIENT_SECRET_%s", upper(each.key))
-  plaintext_value = each.value.client_secret
-}
-
 //NOTE: The following implementation requires GHE
 resource "github_repository_environment" "this" {
   for_each = var.azure_landing_zone_service_principal
