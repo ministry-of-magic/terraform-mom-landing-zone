@@ -26,4 +26,4 @@ destroy: init
 .PHONY: clean
 clean:
 	@rm -rf .terraform
-	@rm *.tfstate
+	@rm *.tfstate*
