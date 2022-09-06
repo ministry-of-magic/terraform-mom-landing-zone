@@ -42,7 +42,7 @@ provider "registry.terraform.io/hashicorp/azurerm" {
 
 provider "registry.terraform.io/hashicorp/github" {
   version     = "4.31.0"
-  constraints = "~> 4.0"
+  constraints = "~> 4.31"
   hashes = [
     "h1:FkBft5JlVtlcYcEM0CiphlFWgjBFQVziJMwrowuBIoc=",
     "zh:07208ecc74804fbdd554830de79627f3e58633fc417b12dc29aafaceae01e427",
